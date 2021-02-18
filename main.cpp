@@ -26,11 +26,11 @@ GPS(float a, Compass b, float c, Compass d){
 
  if ((a == 0.0) && (a ==0.0)){b = Compass::N; d = Compass::W;}
 
- if ((0.0 <= a >= 90.0) && (0.0 <= c >= 180.0)){b = Compass::N; d = Compass::W;}
+ else if ((0.0 <= a >= 90.0) && (0.0 <= c >= 180.0)){b = Compass::N; d = Compass::W;}
 
- if ((0.0 > a ) || (a > 90.0)){a = 0; b = Compass::N;}
+ else if ((0.0 > a ) || (a > 90.0)){a = 0; b = Compass::N;}
 
- if ((0.0 > c ) || (c > 180.0)){a = 0; b = Compass::W;}
+ else if ((0.0 > c ) || (c > 180.0)){a = 0; b = Compass::W;}
 };
 
 private:
