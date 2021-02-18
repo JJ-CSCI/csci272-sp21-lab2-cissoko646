@@ -9,13 +9,29 @@ using namespace std;
 enum class Compass {N, S, W, E};
 
 // Write your code here
-class GPS {
-public:
-GPS();
-
-float latitudeAngle{0.0}; 
+class GPS { float latitudeAngle{0.0}; 
 Compass latitudeDirection{Compass::N}; float longitude; float latitude; 
 Compass longitudeDirection{Compass::W}; float longitudeAngle{0.0};
+
+public:
+
+GPS(float a, Compass b, float c, Compass d){
+  latitude = a;
+  latitudeDirection = b;
+  longitude = c;
+  longitudeDirection = d;
+
+
+
+
+ if ((a == 0.0) && (a ==0.0)){b = Compass::N; d = Compass::W;}
+
+ if ((0.0 <= a >= 90.0) && (0.0 <= c >= 180.0)){b = Compass::N; d = Compass::W;}
+
+ if ((0.0 > a ) || (a > 90.0)){a = 0; b = Compass::N;}
+
+ if ((0.0 > c ) || (c > 180.0)){a = 0; b = Compass::W;}
+};
 
 private:
 double setlatitude(float a){latitudeAngle = a ;}
