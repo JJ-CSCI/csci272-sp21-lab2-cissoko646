@@ -3,14 +3,32 @@
 //------------------------------
 #include "catch.hpp"
 //------------------------------
+using namespace std;
 
 // Use this enum class for indicating the lat/long direction
 enum class Compass {N, S, W, E};
 
 // Write your code here
 class GPS {
+public:
+GPS();
+
+float latitudeAngle{0.0}; 
+Compass latitudeDirection{Compass::N}; float longitude; float latitude; 
+Compass longitudeDirection{Compass::W}; float longitudeAngle{0.0};
+
+private:
+double setlatitude(float a){latitudeAngle = a ;}
+Compass setlatitudeDirection(Compass b){latitudeDirection = b;} double setlongitude(float c){longitudeAngle = c ;}
+Compass setlongitudeDirection(Compass d){longitudeDirection = d ;}
+
+double getLatitude(){return latitudeAngle ;}
+Compass getLatitudeDirection(){ return latitudeDirection;}
+double getLongitude(){return longitudeAngle;}
+Compass getLatitude(){return longitudeDirection;}
 
 };
+
 
 //------------------------------
 //   DO NOT MODIFY TEST CASES
